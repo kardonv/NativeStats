@@ -1,0 +1,48 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Matches";
+}
+
+@section Styles {
+    <link href="~/css/matches.css" rel="stylesheet" type="text/css" />
+}
+
+<div class="matches-buttons">
+    <a href="?status=finished" class="recent">Recent Matches</a>
+    <a href="?status=scheduled" class="upcoming">Upcoming Matches</a>
+</div>
+
+@foreach (var league in Model.LeagueList)
+{
+    @if (!league.HasMatches) continue;
+
+    <ns-carousel>
+        <span slot="carousel-name">@league.Name</span>
+
+        @foreach (var match in league.Matches.Take(10))
+        {
+            <ns-card home-team-logo="@match.HomeTeam.Crest" away-team-logo="@match.AwayTeam.Crest">
+                <span slot="time">@match.UtcDate.ToString("dd.MM HH:mm")</span> @*  *@
+                <span slot="team1-name">@match.HomeTeam.Name</span>
+                <span slot="team2-name">@match.AwayTeam.Name</span>
+                <span slot="odd1">8.00</span>
+                <span slot="odd2">4.15</span>
+                <span slot="odd3">1.47</span>
+            </ns-card>
+        }
+    </ns-carousel>
+}
+
+@if(Model.LeagueList.All(x => !x.HasMatches))
+{
+    <p>No matches found!</p>
+}
+
+<partial name="Templates/_Card" />
+<partial name="Templates/_Carousel" />
+
+@section Scripts {
+    <script src="~/js/components/card.component.js"></script>
+    <script src="~/js/components/carousel.component.js"></script>
+}

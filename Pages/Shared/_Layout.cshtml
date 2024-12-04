@@ -1,0 +1,32 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Native Stats</title>
+    <meta name="description" content="" />
+    <meta name="keywords" content="Sports Betting, Swipeable Cards" />
+    <meta name="author" content="AuthorName" />
+    
+    <link href="~/css/site.css" rel="stylesheet" />
+    @RenderSection("Styles", false)
+</head>
+<body>
+    <header class="top-menu">
+        <div class="left-section">Native Stats</div>
+
+        <div class="right-section">
+            <form method="post">
+                <button class="register-btn" type="submit" formaction="?handler=Register">Register</button>
+                <button class="login-btn" type="submit" formaction="?handler=Login">Login</button>
+            </form>
+        </div>
+    </header>
+
+    <main>
+        @RenderBody()
+    </main>
+
+    @RenderSection("Scripts", false)
+</body>
+</html>

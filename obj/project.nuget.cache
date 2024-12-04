@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "a85VwO+2LIY=",
+  "success": true,
+  "projectFilePath": "D:\\Projects\\_Asessment_\\NativeStats\\NativeStats.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Volodymyr\\.nuget\\packages\\microsoft.visualstudio.azure.containers.tools.targets\\1.20.1\\microsoft.visualstudio.azure.containers.tools.targets.1.20.1.nupkg.sha512"
+  ],
+  "logs": []
+}

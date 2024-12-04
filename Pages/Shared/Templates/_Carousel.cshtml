@@ -1,0 +1,34 @@
+﻿<template id="carousel-template">
+    <style>
+        .carousel-container {
+            overflow: hidden;
+            width: 100%;
+            padding: 10px;
+            box-sizing: border-box;
+        }
+
+        .carousel-name {
+            margin-bottom: 10px;
+            font-size: 18px;
+            font-weight: bold;
+            color: #333;
+            text-align: left;
+        }
+
+        .carousel {
+            display: flex;
+            gap: 16px;
+            transition: transform 0.3s ease-out;
+            touch-action: pan-x;
+        }
+    </style>
+
+    <section class="carousel-container">
+        <h2 class="carousel-name">
+            <slot name="carousel-name">Default Carousel Name</slot>
+        </h2>
+        <div class="carousel" id="carousel">
+            <slot></slot>
+        </div>
+    </section>
+</template>

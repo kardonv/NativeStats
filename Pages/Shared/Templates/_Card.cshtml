@@ -1,0 +1,92 @@
+﻿<template id="ns-card-template">
+    <style>
+        :host {
+            flex: 0 0 85%; /* Each card takes 85% of the container's width */
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .carousel-card {
+            padding: 16px 8px;
+        }
+
+            .carousel-card .time {
+                font-size: 14px;
+                color: #888;
+                margin-bottom: 8px;
+            }
+
+            .carousel-card .teams {
+                margin-bottom: 16px;
+            }
+
+            .carousel-card .team {
+                display: flex;
+                align-items: center;
+                margin-bottom: 8px;
+            }
+
+                .carousel-card .team img {
+                    width: 24px;
+                    height: 24px;
+                    border-radius: 50%;
+                    margin-right: 8px;
+                }
+
+                .carousel-card .team span {
+                    font-size: 16px;
+                    font-weight: bold;
+                    color: #333;
+                }
+
+            .carousel-card .odds {
+                display: flex;
+                justify-content: space-between;
+            }
+
+            .carousel-card .odd {
+                flex: 1;
+                text-align: center;
+                padding: 8px 0;
+                background: #f9f9f9;
+                border: 1px solid #ddd;
+                border-radius: 4px;
+                margin: 0 4px;
+                font-size: 14px;
+                font-weight: bold;
+            }
+
+                .carousel-card .odd.highlight {
+                    background: #e9f7e9;
+                    color: #27ae60;
+                }
+    </style>
+
+    <article class="carousel-card">
+        <div class="time">
+            <slot name="time"></slot>
+        </div>
+        <div class="teams">
+            <div class="team">
+                <img class="home-team-logo" alt="Team 1">
+                <slot name="team1-name"></slot>
+            </div>
+            <div class="team">
+                <img class="away-team-logo" alt="Team 2">
+                <slot name="team2-name"></slot>
+            </div>
+        </div>
+        <div class="odds">
+            <div class="odd highlight">
+                <slot name="odd1"></slot>
+            </div>
+            <div class="odd highlight">
+                <slot name="odd2"></slot>
+            </div>
+            <div class="odd highlight">
+                <slot name="odd3"></slot>
+            </div>
+        </div>
+    </article>
+</template>
